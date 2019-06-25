@@ -1,3 +1,269 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container-fluid">
+
+	<mat-toolbar color="primary">
+		<span>Telephone Illustrations</span>
+		<span class="example-fill-remaining-space"></span>
+		<span class="menu">Start Game</span>
+		<span class="menu">How To Play</span>
+		<span class="menu">About</span>
+	</mat-toolbar>
+
+	<div class="section"></div>
+
+	<h1 class="mat-h1">Enter new player name:</h1>
+	<div class="example-container">
+		<mat-form-field>
+			<input matInput placeholder="Player Name">
+		</mat-form-field>
+	</div>
+	<button mat-stroked-button color="primary">Add New Player</button>
+	<br>
+	<br>
+	<mat-divider></mat-divider>
+
+	<div class="section"></div>
+
+	<h1 class="mat-h1" style="margin-bottom: 20px">Select players:</h1>
+
+	<div class="example-container">
+		<mat-checkbox color="primary">Katlin</mat-checkbox>
+		<mat-checkbox color="primary">Lindsey</mat-checkbox>
+		<mat-checkbox color="primary">Justin</mat-checkbox>
+	</div>
+
+	<div class="smallsection"></div>
+
+	<h3 class="mat-h3">Set a time limit in seconds for typing/drawing:</h3>
+
+	<mat-slider class="example-margin" color="primary" [max]="max" [min]="min" [step]="step" [thumbLabel]="true"
+		[tickInterval]="tickInterval" [(ngModel)]="value">
+	</mat-slider>
+	<br>
+
+	<button mat-stroked-button color="primary">Start Game</button>
+	<br>
+	<br>
+	<mat-divider></mat-divider>
+
+	<div class="section"></div>
+
+	<h1 class="mat-h1">Game Recap:</h1>
+
+	<mat-tab-group animationDuration="2400ms">
+		<mat-tab label="Justin wrote:">
+			<div class="section"></div>
+			<div class="example-small-box mat-elevation-z4">
+				"Barking up the wrong tree"
+			</div>
+		</mat-tab>
+		<mat-tab label="Marc drew:">
+			<div class="section"></div>
+			<div class="example-large-box mat-elevation-z4">
+				"Image of Barking Up The Wrong Tree"
+			</div>
+		</mat-tab>
+		<mat-tab label="Katlin wrote:">
+			<div class="section"></div>
+			<div class="example-small-box mat-elevation-z4">
+				"Dog stuck in a tree"
+			</div> 
+		</mat-tab>
+		<mat-tab label="Lindsey drew:">
+			<div class="section"></div>
+			<div class="example-large-box mat-elevation-z4">
+				"Image of Dog stuck in a tree"
+			</div>
+		</mat-tab>
+		<mat-tab label="Result:">
+			<div class="compare">
+				<div class="section"></div>
+				<div class="example-large-box mat-elevation-z4">
+					"Image of Barking Up The Wrong Tree"
+				</div>
+				<div class="section"></div>
+				<div class="example-large-box mat-elevation-z4">
+					"Image of Dog stuck in a tree"
+				</div>
+			</div>
+		</mat-tab>
+	</mat-tab-group>
+
+	<div class="space"></div>
+
+	<h1>Buttons</h1>
+
+	<button mat-stroked-button>Basic Button</button>
+
+	<br>
+
+	<mat-divider></mat-divider>
+
+	<h1>Checkboxes</h1>
+
+	<mat-checkbox color="warn">Katlin</mat-checkbox><br>
+	<mat-checkbox color="warn">Lindsey</mat-checkbox><br>
+	<mat-checkbox color="primary">Justin</mat-checkbox><br>
+
+	<mat-divider></mat-divider>
+
+	<h1>Forms</h1>
+
+	<div class="example-container">
+		<mat-form-field>
+			<input matInput placeholder="Input">
+		</mat-form-field>
+
+		<mat-form-field>
+			<textarea matInput placeholder="Textarea"></textarea>
+		</mat-form-field>
+
+		<mat-form-field>
+			<mat-select placeholder="Select">
+				<mat-option value="option">Option</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</div>
+
+	<br>
+
+	<mat-divider></mat-divider>
+
+	<h1>Menus</h1>
+
+	<p>Basic menu with icons</p>
+	<mat-menu #newMenu="matMenu" yPosition="below">
+		<button mat-menu-item>
+			<mat-icon>dialpad</mat-icon>
+			<span>Redial</span>
+		</button>
+		<button mat-menu-item>
+			<mat-icon>voicemail</mat-icon>
+			<span>Check voicemail</span>
+		</button>
+		<button mat-menu-item>
+			<mat-icon>notifications_off</mat-icon>
+			<span>Disable alerts</span>
+		</button>
+	</mat-menu>
+
+	<button mat-icon-button [matMenuTriggerFor]="newMenu">
+		<mat-icon>more_vert</mat-icon>
+	</button>
+
+	<br>
+
+	<p>Nested Menu</p>
+	<mat-menu #rootMenu="matMenu">
+		<button mat-menu-item [matMenuTriggerFor]="subMenu">Power</button>
+		<button mat-menu-item>System settings</button>
+	</mat-menu>
+
+	<mat-menu #subMenu="matMenu">
+		<button mat-menu-item>Shut down</button>
+		<button mat-menu-item>Restart</button>
+		<button mat-menu-item>Hibernate</button>
+	</mat-menu>
+
+	<button mat-icon-button [matMenuTriggerFor]="rootMenu">
+		<mat-icon>more_vert</mat-icon>
+	</button>
+
+	<br>
+
+	<p>Menu with data being passed in</p>
+	<mat-menu #otherMenu="matMenu">
+		<ng-template matMenuContent let-name="name">
+			<button mat-menu-item>Settings</button>
+			<button mat-menu-item>Log off {{name}}</button>
+		</ng-template>
+	</mat-menu>
+
+	<button mat-icon-button [matMenuTriggerFor]="otherMenu" [matMenuTriggerData]="{name: 'Sally'}">
+		<mat-icon>more_vert</mat-icon>
+	</button>
+
+	<button mat-icon-button [matMenuTriggerFor]="otherMenu" [matMenuTriggerData]="{name: 'Bob'}">
+		<mat-icon>more_vert</mat-icon>
+	</button>
+
+	<mat-divider></mat-divider>
+
+	<h1>Sliders</h1>
+
+	<h3>Set a time limit in seconds for typing/drawing:</h3>
+	<br>
+	<mat-slider class="example-margin" color="primary" [max]="max" [min]="min" [step]="step" [thumbLabel]="true"
+		[tickInterval]="tickInterval" [(ngModel)]="value">
+	</mat-slider>
+
+	<mat-divider></mat-divider>
+
+	<h1>Tabs</h1>
+
+	<mat-tab-group animationDuration="2400ms">
+		<mat-tab label="Justin wrote:">
+			<div class="example-small-box mat-elevation-z4">
+				"Barking up the wrong tree"
+			</div>
+		</mat-tab>
+		<mat-tab label="Marc drew:">
+			<div class="example-large-box mat-elevation-z4">
+				"Image of Barking Up The Wrong Tree"
+			</div>
+		</mat-tab>
+		<mat-tab label="Katlin wrote:">
+			<div class="example-small-box mat-elevation-z4">
+				"Dog stuck in a tree"
+			</div>
+		</mat-tab>
+		<mat-tab label="Lindsey drew:">
+			<div class="example-large-box mat-elevation-z4">
+				"Image of Dog stuck in a tree"
+			</div>
+		</mat-tab>
+		<mat-tab label="Result:">
+			<div class="compare">
+				<div class="example-large-box mat-elevation-z4">
+					"Image of Barking Up The Wrong Tree"
+				</div>
+				<div class="example-large-box mat-elevation-z4">
+					"Image of Dog stuck in a tree"
+				</div>
+			</div>
+		</mat-tab>
+	</mat-tab-group>
+
+	<br>
+
+	<mat-divider></mat-divider>
+
+	<h1>Toolbars</h1>
+
+	<br>
+
+	<mat-toolbar>
+		<span>Basic Toolbar</span>
+	</mat-toolbar>
+
+	<br>
+
+	<mat-toolbar color="warn">
+		<span>Toolbar With Color</span>
+	</mat-toolbar>
+
+	<br>
+
+	<mat-toolbar color="primary">
+		<span>Toolbar With Flex Positioning</span>
+
+		<!-- This fills the remaining space of the current row -->
+		<span class="example-fill-remaining-space"></span>
+
+		<mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
+	</mat-toolbar>
+
+	<br>
+
+	<mat-divider></mat-divider>
+
+</div>
