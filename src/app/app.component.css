@@ -45,6 +45,7 @@
 
   .compare {
       display: inline-flex;
+      margin-top: 40px;
   }
 
   .space {
@@ -57,12 +58,8 @@
 
   .smallsection {
     margin-bottom: 25px;
-}
+  }   
 
   button {
       margin-top: 20px;
-  }
-
-  mat-tab label {
-      margin-bottom: 50px;
   }
