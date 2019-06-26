@@ -1,0 +1,16 @@
+.mat-slider-horizontal {
+    width: 300px;
+  }
+  
+  .mat-slider-vertical {
+    height: 300px;
+  }
+
+  .compare {
+      display: inline-flex;
+      margin-top: 40px;
+  }
+
+  button {
+    margin-top: 20px;
+}

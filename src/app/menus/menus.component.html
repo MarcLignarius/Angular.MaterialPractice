@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <p>Basic menu with icons</p>
+	<mat-menu #newMenu="matMenu" yPosition="below">
+		<button mat-menu-item>
+			<mat-icon>dialpad</mat-icon>
+			<span>Redial</span>
+		</button>
+		<button mat-menu-item>
+			<mat-icon>voicemail</mat-icon>
+			<span>Check voicemail</span>
+		</button>
+		<button mat-menu-item>
+			<mat-icon>notifications_off</mat-icon>
+			<span>Disable alerts</span>
+		</button>
+	</mat-menu>
+	<button mat-icon-button [matMenuTriggerFor]="newMenu">
+		<mat-icon>more_vert</mat-icon>
+	</button>
+	<div class="smallsection"></div>
+	<p>Nested Menu</p>
+	<mat-menu #rootMenu="matMenu">
+		<button mat-menu-item [matMenuTriggerFor]="subMenu">Power</button>
+		<button mat-menu-item>System settings</button>
+	</mat-menu>
+	<mat-menu #subMenu="matMenu">
+		<button mat-menu-item>Shut down</button>
+		<button mat-menu-item>Restart</button>
+		<button mat-menu-item>Hibernate</button>
+	</mat-menu>
+	<button mat-icon-button [matMenuTriggerFor]="rootMenu">
+		<mat-icon>more_vert</mat-icon>
+	</button>
+	<div class="smallsection"></div>
+	<p>Menu with data being passed in</p>
+	<mat-menu #otherMenu="matMenu">
+		<ng-template matMenuContent let-name="name">
+			<button mat-menu-item>Settings</button>
+			<button mat-menu-item>Log off {{name}}</button>
+		</ng-template>
+	</mat-menu>
+	<button mat-icon-button [matMenuTriggerFor]="otherMenu" [matMenuTriggerData]="{name: 'Sally'}">
+		<mat-icon>more_vert</mat-icon>
+	</button>
+	<button mat-icon-button [matMenuTriggerFor]="otherMenu" [matMenuTriggerData]="{name: 'Bob'}">
+		<mat-icon>more_vert</mat-icon>
+	</button>
+</div>
+

@@ -2,64 +2,15 @@
     flex: 1 1 auto;
   }
 
-  .example-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .example-container > * {
-    width: 25%;
-  }
-
-  .example-small-box, .example-large-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 16px;
-    padding: 16px;
-    border-radius: 8px;
-  }
-  
-  .example-small-box {
-    height: 100px;
-    width: 100px;
-  }
-  
-  .example-large-box {
-    height: 300px;
-    width: 300px;
-  }
-
   .menu {
     font-size: 15px;
     margin-right: 15px;
   }
-  
-  .mat-slider-horizontal {
-    width: 300px;
-  }
-  
-  .mat-slider-vertical {
-    height: 300px;
+
+  a {
+    color: #FFFFFF;
   }
 
-  .compare {
-      display: inline-flex;
-      margin-top: 40px;
-  }
-
-  .space {
-      margin-bottom: 500px;
-  }
-
-  .section {
-      margin-bottom: 50px;
-  }
-
-  .smallsection {
-    margin-bottom: 25px;
-  }   
-
-  button {
-      margin-top: 20px;
+  a:hover {
+    color: #bfbfbf;
   }
